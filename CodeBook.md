@@ -30,7 +30,7 @@ all other variables are the average of each original variable, only the measurem
 
 For more information on the original features, I included "features_info.txt" that was a part of the UCI HAR dataset:
 
-# Feature Selection 
+### Feature Selection 
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -108,7 +108,7 @@ For each record it is provided:
 Transformations
 ===============
 
-# Merges the training and the test sets to create one data set.
+### Merges the training and the test sets to create one data set.
 - Reading in the feature names
 - Reading in test data
 - Reading in train data
@@ -116,17 +116,17 @@ Transformations
 - Combine the Y, the subject and X
 - Combine the test and train dataset
 
-# Extracts only the measurements on the mean and standard deviation for each measurement. 
+### Extracts only the measurements on the mean and standard deviation for each measurement. 
 - We use an exact match grep (fixed = TRUE) to obtain a list of indices of variables
  containing either mean() or std()
  + 2, because the first column is now Y from Y_test and Y_train and the second is the subject. We still need the Y, therefore the first column is added
 
-# Uses descriptive activity names to name the activities in the data set
+### Uses descriptive activity names to name the activities in the data set
 - Reading in the activity names
 - Merge the two sets
 - Drop the Y, it has become redundant with the new act_desc
 
-# Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+### Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 - Reshape the data, so that the mean of all variables can be calculated at once
 - Write the tidy data set to a txt-file
 
